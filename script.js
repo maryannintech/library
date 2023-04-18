@@ -7,10 +7,10 @@ function Book(title, author, pages, read) {
     this.read = read
     this.info = function() {
         if (read === 'finish') {
-            return `The ${title} by ${author}, ${pages} pages, finished reading`
+            console.log(`The ${title} by ${author}, ${pages} pages, finished reading`);
         }
         else {
-            return `The ${title} by ${author}, ${pages} pages, done reading`
+            console.log(`The ${title} by ${author}, ${pages} pages, not done reading`);
         }
     }
 }
@@ -21,6 +21,5 @@ function addBookToLibrary(book) {
 }
 
 const newBook = new Book('good omens', 'neil gaiman', '512', 'finish');
-console.log(addBookToLibrary(newBook));
 
 
