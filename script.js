@@ -17,7 +17,6 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
-    console.log(myLibrary);
 }
 
 const newBook = new Book('good omens', 'neil gaiman', '512', 'finish');
