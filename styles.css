@@ -45,7 +45,8 @@ main {
     padding: 20px;
     font-family: "Poppins", sans-serif;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    column-gap: 20px;
     align-items: center;
     justify-items: center;
 }
@@ -62,15 +63,17 @@ main {
     border: 2px solid var(--card-details-color);
 }
 
+.card p {
+    margin: 0;
+}
+
 .details {
     background-color: var(--card-details-color);
     width: 100%;
     padding: 5px;
     border-radius: 17px 17px 0 0;
-
 }
 
 .book {
     padding: 20px;
 }
-
