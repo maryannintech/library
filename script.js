@@ -35,4 +35,8 @@ infoBtn.addEventListener("click", () => {
 infoBtn.addEventListener("mouseleave", () => {
   infoContent.style.display = "none";
 });
-const addBtn = document.querySelector(".add");
+const formModal = document.querySelector("form");
+const addBtn = document.querySelector(".add").addEventListener("click", () => {
+  formModal.style.display = "block";
+});
+

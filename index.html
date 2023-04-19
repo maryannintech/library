@@ -34,26 +34,26 @@
         book.
       </p>
     </section>
+    <form>
+      <label for="title"
+        >Title: <input type="text" id="title" required
+      /></label>
+      <label for="author"
+        >Author: <input type="text" id="author" required
+      /></label>
+      <label for="pages"
+        >Pages: <input type="number" id="pages" min="1" required
+      /></label>
+      <label for="status"
+        >Status of book:
+        <select name="book-status" id="status" required>
+          <option value="finished">I finished reading this</option>
+          <option value="not">I'm not done reading this</option>
+        </select>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
     <main>
-      <form>
-        <label for="title"
-          >Title: <input type="text" id="title" required
-        /></label>
-        <label for="author"
-          >Author: <input type="text" id="author" required
-        /></label>
-        <label for="pages"
-          >Pages: <input type="number" id="pages" min="1" required
-        /></label>
-        <label for="status"
-          >Status of book:
-          <select name="book-status" id="status" required>
-            <option value="finished">I finished reading this</option>
-            <option value="not">I'm not done reading this</option>
-          </select>
-        </label>
-        <button type="submit">Submit</button>
-      </form>
     </main>
   </body>
 </html>

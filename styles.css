@@ -20,7 +20,7 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: var(--bg-color-header);
   color: #eeeeee;
   padding: 2px 30px;
@@ -39,8 +39,6 @@ header {
 
 .buttons {
   display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
 .add,
@@ -112,11 +110,15 @@ main {
 }
 
 form {
+  font-family: "Poppins", sans-serif;
   position: sticky;
   background-color: #9da3a4;
   padding: 14px;
   border-radius: 30px;
   border: 2px solid var(--bg-color-header);
+  display: none;
+  width: fit-content;
+  margin: 20px auto;
 }
 
 input {
@@ -145,6 +147,5 @@ form button {
 }
 
 form button:hover {
-  background-color: #586f6b;
-  color: white;
+  background-color: #cccccc;
 }
