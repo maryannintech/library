@@ -1,14 +1,16 @@
 let myLibrary = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, status) {
   const mainContent = document.querySelector("main");
 
   this.card = document.createElement("div");
   mainContent.appendChild(this.card).className = "card";
+
   this.title = title;
   this.author = author;
   this.pages = pages;
-  addBookToLibrary(title, author, pages);
+  this.status = status;
+  addBookToLibrary(title, author, pages, status);
 }
 
 Book.prototype.printInfo = function() {
@@ -19,8 +21,8 @@ Book.prototype.printInfo = function() {
   }
 };
 
-function addBookToLibrary(title, author, pages, read) {
-  myLibrary.push(title, author, pages, read);
+function addBookToLibrary(title, author, pages, status) {
+  myLibrary.push(title, author, pages, status);
 }
 
 const newBook = new Book("good omens", "neil gaiman", "512", "finish");
