@@ -111,6 +111,14 @@ main {
   padding: 20px;
 }
 
+form {
+  position: sticky;
+  background-color: #9da3a4;
+  padding: 14px;
+  border-radius: 30px;
+  border: 2px solid var(--bg-color-header);
+}
+
 input {
   font-family: "Poppins", sans-serif;
   display: block;
@@ -126,4 +134,17 @@ select {
   font-family: "Poppins", sans-serif;
   border: 2px solid var(--bg-color-header);
   margin: 10px;
+}
+
+form button {
+  font-family: "Poppins", sans-serif;
+  margin: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--bg-color-header);
+  padding: 3px 10px;
+}
+
+form button:hover {
+  background-color: #586f6b;
+  color: white;
 }
