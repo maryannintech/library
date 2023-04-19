@@ -15,26 +15,43 @@
   <body>
     <header>
       <p class="title">My Library</p>
-      <p class="intro">
-        Whether you're a book lover looking to keep track of your personal
+      <div class="buttons">
+        <button class="info">
+          About<br /><i class="bx bxs-info-circle"></i>
+        </button>
+        <button class="add">
+          New book<br /><i class="bx bxs-book-add"></i>
+        </button>
+      </div>
+    </header>
+    <section class="info-content">
+      <p class="info-para">
+        <i class='bx bx-info-circle' ></i> Whether you're a book lover looking to keep track of your personal
         collection, a student trying to organize your textbooks, or simply
         someone who wants to keep a record of the books you've read, we've got
         you covered. Our website allows you to easily store and manage your
         books, just click the add button to add a book.
       </p>
-    </header>
+    </section>
     <main>
-        <div class="card">
-            <div class="details">
-                <p class="book-title">Title</p>
-            </div>
-            <div class="book">
-                <p>Title: Good Omens</p>
-                <p>Author: Neil Gaiman</p>
-                <p>Pages: 517</p>
-                <p>Status: Not done</p>
-            </div>
-        </div>
+      <form>
+        <label for="title"
+          >Title: <input type="text" id="title" required
+        /></label>
+        <label for="author"
+          >Author: <input type="text" id="author" required
+        /></label>
+        <label for="pages"
+          >Pages: <input type="number" id="pages" min="1" required
+        /></label>
+        <label for="status"
+          >Status of book:
+          <select name="book-status" id="status" required>
+            <option value="finished">I finished reading this</option>
+            <option value="not">I'm not done reading this</option>
+          </select>
+        </label>
+      </form>
     </main>
   </body>
 </html>
