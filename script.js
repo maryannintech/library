@@ -1,22 +1,26 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
+  const mainContent = document.querySelector("main");
+
+  this.card = document.createElement("div");
+  mainContent.appendChild(this.card).className = "card";
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
-  this.info = function () {
-    if (read === "finish") {
-      return `The ${title} by ${author}, ${pages} pages, finished reading`;
-    } else {
-      return `The ${title} by ${author}, ${pages} pages, not done reading`;
-    }
-  };
-  addBookToLibrary(title, author, pages, read, this.info);
+  addBookToLibrary(title, author, pages);
 }
 
-function addBookToLibrary(title, author, pages, read, info) {
-  myLibrary.push(title, author, pages, read, info);
+Book.prototype.printInfo = function() {
+  if (read === "finish") {
+    console.log(`The ${title} by ${author}, ${pages} pages, finished reading`);
+  } else {
+    console.log(`The ${title} by ${author}, ${pages} pages, not finished reading`);
+  }
+};
+
+function addBookToLibrary(title, author, pages, read) {
+  myLibrary.push(title, author, pages, read);
 }
 
 const newBook = new Book("good omens", "neil gaiman", "512", "finish");
