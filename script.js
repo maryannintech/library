@@ -48,7 +48,7 @@ function Book() {
 
   // Append the new card to the main element
   mainContent.appendChild(newCard);
-  
+
   this.title = titleInput.value;
   this.author = authorInput.value;
   this.pages = pagesInput.value;
@@ -64,6 +64,7 @@ function removeCard(event) {
   const button = event.target;
   const btnParent = button.parentNode;
   const btnGrandParent = btnParent.parentNode;
+
   btnGrandParent.remove();
 }
 
