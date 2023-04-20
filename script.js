@@ -12,6 +12,7 @@ formModal.addEventListener("submit", function (event) {
 });
 
 function Book() {
+  // Make card
   const mainContent = document.querySelector("main");
   const newCard = document.createElement("div");
   newCard.className = "card";
@@ -72,6 +73,4 @@ addBtn.addEventListener("click", () => {
 const cancelBtn = document.querySelector(".cancel");
 cancelBtn.addEventListener("click", () => {
   formModal.style.display = "none";
-})
-
-
+});
