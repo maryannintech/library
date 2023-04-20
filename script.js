@@ -23,13 +23,32 @@ function Book() {
   const cardTitle = document.createElement("p");
   cardTitle.className = "book-title";
   cardTitle.textContent = titleInput.value;
+  const detailsContent = document.createElement("div");
+  detailsContent.className = "detailsContent";
   const deleteBtn = document.createElement("i");
   deleteBtn.className = "bx bx-trash";
   deleteBtn.addEventListener("click", removeCard);
   cardDetails.appendChild(cardTitle);
   newCard.appendChild(cardDetails);
-  cardDetails.appendChild(deleteBtn);
+  cardDetails.appendChild(detailsContent);
 
+  if (statusInput.value === "I'm not done reading this") {
+    const checkBtn = document.createElement("i");
+    checkBtn.className = "bx bx-check";
+    detailsContent.appendChild(checkBtn);
+    checkBtn.addEventListener("click", () => {
+      changeStatus("finish", cardInfoStatus);
+    });
+  } else {
+    const uncheckBtn = document.createElement("i");
+    uncheckBtn.className = "bx bx-x";
+    detailsContent.appendChild(uncheckBtn);
+    uncheckBtn.addEventListener("click", () => {
+      changeStatus("not", cardInfoStatus);
+    });
+  }
+
+  detailsContent.appendChild(deleteBtn);
   const cardInfo = document.createElement("div");
   cardInfo.className = "book";
   const cardInfoTitle = document.createElement("p");
@@ -64,8 +83,18 @@ function removeCard(event) {
   const button = event.target;
   const btnParent = button.parentNode;
   const btnGrandParent = btnParent.parentNode;
+  const btnGrandGrandParent = btnGrandParent.parentNode;
 
-  btnGrandParent.remove();
+  btnGrandGrandParent.remove();
+}
+
+function changeStatus(status, statusInfo) {
+  if (status === "finish") {
+    statusInfo.textContent = "I finished reading this";
+  }
+  if (status === "not") {
+    statusInfo.textContent = "I'm not done reading this";
+  }
 }
 
 const infoContent = document.querySelector(".info-para");

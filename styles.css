@@ -116,6 +116,14 @@ main {
   align-content: center;
 }
 
+.detailsContent {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 3px;
+}
+
 .book {
   padding: 20px;
 }
