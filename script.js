@@ -1,9 +1,5 @@
 let myLibrary = [];
 
-const titleInput = document.querySelector("#title");
-const authorInput = document.querySelector("#author");
-const pagesInput = document.querySelector("#pages");
-const statusInput = document.querySelector("#status");
 const formModal = document.querySelector("form");
 formModal.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -12,6 +8,10 @@ formModal.addEventListener("submit", function (event) {
 });
 
 function makeCard() {
+  const titleInput = document.querySelector("#title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
+  const statusInput = document.querySelector("#status");
   // Make card
   const mainContent = document.querySelector("main");
   const newCard = document.createElement("div");
