@@ -7,36 +7,48 @@ const statusInput = document.querySelector("#status");
 const formModal = document.querySelector("form");
 formModal.addEventListener("submit", function (event) {
   event.preventDefault();
-  Book(
-    titleInput.value,
-    authorInput.value,
-    pagesInput.value,
-    statusInput.value
-  );
+  formModal.style.display = "none";
+  Book();
 });
 
-function Book(title, author, pages, status) {
+function Book() {
   const mainContent = document.querySelector("main");
+  const newCard = document.createElement("div");
+  newCard.className = "card";
 
-  this.card = document.createElement("div");
-  mainContent.appendChild(this.card).className = "card";
+  // Add content to the card
+  const cardDetails = document.createElement("div");
+  cardDetails.className = "details";
+  const cardTitle = document.createElement("p");
+  cardTitle.className = "book-title";
+  cardTitle.textContent = titleInput.value;
+  cardDetails.appendChild(cardTitle);
+  newCard.appendChild(cardDetails);
 
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
-  addBookToLibrary(title, author, pages, status);
+  const cardInfo = document.createElement("div");
+  cardInfo.className = "book";
+  const cardInfoTitle = document.createElement("p");
+  cardInfoTitle.textContent = `Title: ${titleInput.value}`;
+  cardInfo.appendChild(cardInfoTitle);
+  const cardInfoAuthor = document.createElement("p");
+  cardInfoAuthor.textContent = `Author: ${authorInput.value}`;
+  cardInfo.appendChild(cardInfoAuthor);
+  const cardInfoPages = document.createElement("p");
+  cardInfoPages.textContent = `Pages: ${pagesInput.value}`;
+  cardInfo.appendChild(cardInfoPages);
+  const cardInfoStatus = document.createElement("p");
+  cardInfoStatus.textContent = `Status: ${statusInput.value}`;
+  cardInfo.appendChild(cardInfoStatus);
+  newCard.appendChild(cardInfo);
+
+  // Append the new card to the main element
+  mainContent.appendChild(newCard);
+  this.title = titleInput.value;
+  this.author = authorInput.value;
+  this.pages = pagesInput.value;
+  this.status = statusInput.value;
+  addBookToLibrary(this.title, this.author, this.pages, this.status);
 }
-
-Book.prototype.printInfo = function () {
-  if (this.status) {
-    console.log(`The ${title} by ${author}, ${pages} pages, finished reading`);
-  } else {
-    console.log(
-      `The ${title} by ${author}, ${pages} pages, not finished reading`
-    );
-  }
-};
 
 function addBookToLibrary(title, author, pages, status) {
   myLibrary.push(title, author, pages, status);
@@ -54,4 +66,12 @@ infoBtn.addEventListener("mouseleave", () => {
 const addBtn = document.querySelector(".add");
 addBtn.addEventListener("click", () => {
   formModal.style.display = "block";
+  formModal.reset();
 });
+
+const cancelBtn = document.querySelector(".cancel");
+cancelBtn.addEventListener("click", () => {
+  formModal.style.display = "none";
+})
+
+

@@ -18,6 +18,10 @@ body {
   margin: 0;
 }
 
+.bx {
+  cursor: pointer;
+}
+
 header {
   display: flex;
   justify-content: space-evenly;
