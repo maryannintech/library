@@ -1,5 +1,14 @@
 let myLibrary = [];
 
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+const statusInput = document.querySelector("#status");
+const formModal = document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  Book(titleInput, authorInput, pagesInput, statusInput);
+});
+
 function Book(title, author, pages, status) {
   const mainContent = document.querySelector("main");
 
@@ -14,7 +23,7 @@ function Book(title, author, pages, status) {
 }
 
 Book.prototype.printInfo = function () {
-  if (read === "finish") {
+  if (this.status) {
     console.log(`The ${title} by ${author}, ${pages} pages, finished reading`);
   } else {
     console.log(
@@ -35,7 +44,7 @@ infoBtn.addEventListener("click", () => {
 infoBtn.addEventListener("mouseleave", () => {
   infoContent.style.display = "none";
 });
-const formModal = document.querySelector("form");
+
 const addBtn = document.querySelector(".add").addEventListener("click", () => {
   formModal.style.display = "block";
 });

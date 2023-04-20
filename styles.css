@@ -63,6 +63,8 @@ header {
   padding: 10px;
   margin: 0 auto;
   display: none;
+  background-color: var(--card-details-color);
+  color: #f5f1ed;
 }
 
 .info:hover,
