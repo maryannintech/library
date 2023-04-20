@@ -37,15 +37,10 @@ function Book() {
     checkBtn.className = "bx bx-check";
     detailsContent.appendChild(checkBtn);
     checkBtn.addEventListener("click", () => {
-      changeStatus("finish", cardInfoStatus);
+      changeStatus("finish", cardInfoStatus, checkBtn);
     });
   } else {
-    const uncheckBtn = document.createElement("i");
-    uncheckBtn.className = "bx bx-x";
-    detailsContent.appendChild(uncheckBtn);
-    uncheckBtn.addEventListener("click", () => {
-      changeStatus("not", cardInfoStatus);
-    });
+    // do nothing
   }
 
   detailsContent.appendChild(deleteBtn);
@@ -88,13 +83,15 @@ function removeCard(event) {
   btnGrandGrandParent.remove();
 }
 
-function changeStatus(status, statusInfo) {
+function changeStatus(status, statusInfo, button) {
   if (status === "finish") {
     statusInfo.textContent = "Status: I'm done reading this";
   }
-  if (status === "not") {
-    statusInfo.textContent = "Status: I'm not done reading this";
+  else {
+
   }
+
+  button.style.display = "none";
 }
 
 const infoContent = document.querySelector(".info-para");
