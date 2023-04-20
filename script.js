@@ -1,17 +1,11 @@
 let myLibrary = [];
 
-const formModal = document.querySelector("form");
-formModal.addEventListener("submit", function (event) {
-  event.preventDefault();
-  formModal.style.display = "none";
-  makeCard();
-});
-
 function makeCard() {
   const titleInput = document.querySelector("#title");
   const authorInput = document.querySelector("#author");
   const pagesInput = document.querySelector("#pages");
   const statusInput = document.querySelector("#status");
+
   // Make card
   const mainContent = document.querySelector("main");
   const newCard = document.createElement("div");
@@ -124,6 +118,13 @@ const addBtn = document.querySelector(".add");
 addBtn.addEventListener("click", () => {
   formModal.style.display = "block";
   formModal.reset();
+});
+
+const formModal = document.querySelector("form");
+formModal.addEventListener("submit", function (event) {
+  event.preventDefault();
+  formModal.style.display = "none";
+  makeCard();
 });
 
 const cancelBtn = document.querySelector(".cancel");
