@@ -90,10 +90,10 @@ function removeCard(event) {
 
 function changeStatus(status, statusInfo) {
   if (status === "finish") {
-    statusInfo.textContent = "I finished reading this";
+    statusInfo.textContent = "Status: I finished reading this";
   }
   if (status === "not") {
-    statusInfo.textContent = "I'm not done reading this";
+    statusInfo.textContent = "Status: I'm not done reading this";
   }
 }
 
