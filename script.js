@@ -1,5 +1,17 @@
 let myLibrary = [];
 
+function Book(title, author, pages, status) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.status = status;
+  addBookToLibrary(this.title, this.author, this.pages, this.status);
+}
+
+function addBookToLibrary(title, author, pages, status) {
+  myLibrary.push(title, author, pages, status);
+}
+
 function makeCard() {
   const titleInput = document.querySelector("#title");
   const authorInput = document.querySelector("#author");
@@ -68,18 +80,6 @@ function makeCard() {
     pagesInput.value,
     statusInput.value
   );
-}
-
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
-  addBookToLibrary(this.title, this.author, this.pages, this.status);
-}
-
-function addBookToLibrary(title, author, pages, status) {
-  myLibrary.push(title, author, pages, status);
 }
 
 function removeCard(event) {
