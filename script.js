@@ -25,6 +25,7 @@ function Book() {
   cardTitle.textContent = titleInput.value;
   const deleteBtn = document.createElement("i");
   deleteBtn.className = "bx bx-trash";
+  deleteBtn.addEventListener("click", removeCard);
   cardDetails.appendChild(cardTitle);
   newCard.appendChild(cardDetails);
   cardDetails.appendChild(deleteBtn);
@@ -47,6 +48,7 @@ function Book() {
 
   // Append the new card to the main element
   mainContent.appendChild(newCard);
+  
   this.title = titleInput.value;
   this.author = authorInput.value;
   this.pages = pagesInput.value;
@@ -58,8 +60,11 @@ function addBookToLibrary(title, author, pages, status) {
   myLibrary.push(title, author, pages, status);
 }
 
-function removeCard() {
-  this.remov
+function removeCard(event) {
+  const button = event.target;
+  const btnParent = button.parentNode;
+  const btnGrandParent = btnParent.parentNode;
+  btnGrandParent.remove();
 }
 
 const infoContent = document.querySelector(".info-para");
