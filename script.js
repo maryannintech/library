@@ -4,10 +4,17 @@ const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
-const formModal = document.querySelector("form").addEventListener("submit", function(event) {
-  event.preventDefault();
-  Book(titleInput, authorInput, pagesInput, statusInput);
-});
+const formModal = document
+  .querySelector("form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    Book(
+      titleInput.value,
+      authorInput.value,
+      pagesInput.value,
+      statusInput.value
+    );
+  });
 
 function Book(title, author, pages, status) {
   const mainContent = document.querySelector("main");
@@ -48,4 +55,3 @@ infoBtn.addEventListener("mouseleave", () => {
 const addBtn = document.querySelector(".add").addEventListener("click", () => {
   formModal.style.display = "block";
 });
-
