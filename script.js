@@ -8,10 +8,10 @@ const formModal = document.querySelector("form");
 formModal.addEventListener("submit", function (event) {
   event.preventDefault();
   formModal.style.display = "none";
-  Book();
+  makeCard();
 });
 
-function Book() {
+function makeCard() {
   // Make card
   const mainContent = document.querySelector("main");
   const newCard = document.createElement("div");
@@ -36,8 +36,13 @@ function Book() {
     const checkBtn = document.createElement("i");
     checkBtn.className = "bx bx-check";
     detailsContent.appendChild(checkBtn);
+    cardDetails.style.backgroundColor = "#b97375";
+    newCard.style.border = "2px solid #b97375";
     checkBtn.addEventListener("click", () => {
       changeStatus("finish", cardInfoStatus, checkBtn);
+    });
+    checkBtn.addEventListener("click", () => {
+      changeBackground(cardDetails, newCard);
     });
   } else {
     // do nothing
@@ -63,10 +68,19 @@ function Book() {
   // Append the new card to the main element
   mainContent.appendChild(newCard);
 
-  this.title = titleInput.value;
-  this.author = authorInput.value;
-  this.pages = pagesInput.value;
-  this.status = statusInput.value;
+  Book(
+    titleInput.value,
+    authorInput.value,
+    pagesInput.value,
+    statusInput.value
+  );
+}
+
+function Book(title, author, pages, status) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.status = status;
   addBookToLibrary(this.title, this.author, this.pages, this.status);
 }
 
@@ -86,12 +100,15 @@ function removeCard(event) {
 function changeStatus(status, statusInfo, button) {
   if (status === "finish") {
     statusInfo.textContent = "Status: I'm done reading this";
-  }
-  else {
-
+  } else {
   }
 
   button.style.display = "none";
+}
+
+function changeBackground(parent, grandparent) {
+  parent.style.backgroundColor = "#586f6b";
+  grandparent.style.border = "2px solid #586f6b";
 }
 
 const infoContent = document.querySelector(".info-para");
