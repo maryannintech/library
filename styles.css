@@ -97,6 +97,8 @@ main {
   width: fit-content;
   border-radius: 20px;
   border: 2px solid var(--card-details-color);
+  width: fit-content;
+  height: fit-content;
 }
 
 .card p {
@@ -109,6 +111,9 @@ main {
   padding: 5px 10px;
   border-radius: 17px 17px 0 0;
   color: var(--card-color);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .book {

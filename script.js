@@ -23,8 +23,11 @@ function Book() {
   const cardTitle = document.createElement("p");
   cardTitle.className = "book-title";
   cardTitle.textContent = titleInput.value;
+  const deleteBtn = document.createElement("i");
+  deleteBtn.className = "bx bx-trash";
   cardDetails.appendChild(cardTitle);
   newCard.appendChild(cardDetails);
+  cardDetails.appendChild(deleteBtn);
 
   const cardInfo = document.createElement("div");
   cardInfo.className = "book";
@@ -53,6 +56,10 @@ function Book() {
 
 function addBookToLibrary(title, author, pages, status) {
   myLibrary.push(title, author, pages, status);
+}
+
+function removeCard() {
+  this.remov
 }
 
 const infoContent = document.querySelector(".info-para");
