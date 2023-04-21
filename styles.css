@@ -69,6 +69,7 @@ header {
   display: none;
   background-color: var(--card-details-color);
   color: #f5f1ed;
+  text-align: center;
 }
 
 .info:hover,
