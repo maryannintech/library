@@ -78,7 +78,7 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 30px;
   font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -100,6 +100,12 @@ main {
   border: 2px solid var(--card-details-color);
   width: fit-content;
   height: fit-content;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card p {
