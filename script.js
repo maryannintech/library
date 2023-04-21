@@ -21,7 +21,7 @@ function makeCard() {
   // Make card
   const mainContent = document.querySelector("main");
   const newCard = document.createElement("div");
-  newCard.className = "card";
+  newCard.className = "card appear-word";
 
   // Add content to the card
   const cardDetails = document.createElement("div");

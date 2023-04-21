@@ -32,20 +32,6 @@ header {
   border-bottom: 2px solid var(--border-color);
 }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-15px);
-  }
-}
-
-.float-word {
-  animation: floatUp 1s ease-in normal;
-}
-
 .title {
   font-family: "Yeseva One", cursive;
   font-size: 3rem;
@@ -188,4 +174,22 @@ form button {
 
 form button:hover {
   background-color: #cccccc;
+}
+
+@keyframes wordAppear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.appear-word {
+  animation: wordAppear 1s ease-in normal forwards;
 }
