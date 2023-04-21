@@ -32,6 +32,20 @@ header {
   border-bottom: 2px solid var(--border-color);
 }
 
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.float-word {
+  animation: floatUp 1s ease-in normal;
+}
+
 .title {
   font-family: "Yeseva One", cursive;
   font-size: 3rem;
