@@ -38,6 +38,7 @@ function makeCard() {
   newCard.appendChild(cardDetails);
   cardDetails.appendChild(detailsContent);
 
+  // Check the status and give it a background color according to the book's status
   if (statusInput.value === "I'm not done reading this") {
     const checkBtn = document.createElement("i");
     checkBtn.className = "bx bx-check";
@@ -91,6 +92,7 @@ function removeCard(event) {
   btnGrandGrandParent.remove();
 }
 
+// Change status when the user is done reading the book
 function changeStatus(status, statusInfo, button) {
   if (status === "finish") {
     statusInfo.textContent = "Status: I'm done reading this";
