@@ -101,7 +101,7 @@ main {
   width: fit-content;
   height: fit-content;
 
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s;
 }
 
 .card:hover {
