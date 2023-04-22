@@ -55,6 +55,7 @@ header {
   border: none;
   padding: 5px 10px;
   margin: 10px;
+  transition: background-color ease 1s;
 }
 
 .buttons .bx {
@@ -75,6 +76,7 @@ header {
 .info:hover,
 .add:hover {
   background-color: var(--card-details-color);
+
 }
 
 main {
