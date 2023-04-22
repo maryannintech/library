@@ -76,7 +76,6 @@ header {
 .info:hover,
 .add:hover {
   background-color: var(--card-details-color);
-
 }
 
 main {
