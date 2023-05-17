@@ -1,7 +1,4 @@
 let myLibrary = [];
-if (localStorage.getItem("myLibrary")) {
-  myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
-}
 
 function Book(title, author, pages, status) {
   this.title = title;
@@ -84,8 +81,6 @@ function makeCard() {
     pagesInput.value,
     statusInput.value
   );
-
-  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
 function removeCard(event) {
@@ -138,7 +133,3 @@ const cancelBtn = document.querySelector(".cancel");
 cancelBtn.addEventListener("click", () => {
   formModal.style.display = "none";
 });
-
-window.onload = function () {
-  makeCard();
-};
